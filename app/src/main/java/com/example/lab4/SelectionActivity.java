@@ -51,12 +51,16 @@ public class SelectionActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(ImageActivity.this, "Item Selected", Toast.LENGTH_SHORT).show();
                 if (isFirst) {
                     isFirst = false;
                 } else {
                     //showPicture(position);
-                    Intent intent = new Intent(SelectionActivity.this,DisplayActivity.class);
+                    Intent intent = new Intent(SelectionActivity.this, DisplayActivity.class);
+                    // pass in necessary information
+                    intent.putExtra("cats", cats);
+                    intent.putExtra("catImages", catImages);
+                    intent.putExtra("position", position);
+                    // start the intent
                     startActivity(intent);
                 }
             }
