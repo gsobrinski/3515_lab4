@@ -2,6 +2,7 @@ package com.example.lab4;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,7 +55,9 @@ public class SelectionActivity extends AppCompatActivity {
                 if (isFirst) {
                     isFirst = false;
                 } else {
-                    showPicture(position);
+                    //showPicture(position);
+                    Intent intent = new Intent(SelectionActivity.this,DisplayActivity.class);
+                    startActivity(intent);
                 }
             }
 
