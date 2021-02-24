@@ -46,11 +46,8 @@ public class ImageAdapter extends BaseAdapter implements SpinnerAdapter {
         TextView nameText;
 
         nameText = new TextView(context);
-        if (first) {
-            nameText.setText("select a cat:");
-        } else {
-            nameText.setText(names.get(position));
-        }
+        nameText.setText("select a cat:");
+
         nameText.setGravity(Gravity.CENTER);
         return nameText;
     }

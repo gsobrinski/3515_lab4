@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,7 +37,8 @@ public class DisplayActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         catImages = bundle.getIntArray("catImages");
 
-
-
+        image.setImageResource(catImages[position]);
+        text.setText(cats.get(position));
+        text.setGravity(Gravity.CENTER);
     }
 }
