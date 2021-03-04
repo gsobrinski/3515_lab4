@@ -24,6 +24,8 @@ public class DisplayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
 
+        setTitle("Display");
+
         // retrieve views from activity_display page
         image = findViewById(R.id.imageView);
         text = findViewById(R.id.textView);

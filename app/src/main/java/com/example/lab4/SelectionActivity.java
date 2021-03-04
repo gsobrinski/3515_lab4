@@ -30,6 +30,8 @@ public class SelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setTitle("Selection");
+
         // retrieve views from the xml
         spinner = findViewById(R.id.spinner);
         imageView = findViewById(R.id.imageView);
