@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -20,10 +21,7 @@ import java.util.ArrayList;
 public class SelectionActivity extends AppCompatActivity {
 
     int[] catImages;
-
-    Spinner spinner;
-    ImageView imageView;
-    boolean isFirst = true;
+    GridView gridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +31,7 @@ public class SelectionActivity extends AppCompatActivity {
         setTitle("Selection");
 
         // retrieve views from the xml
-        spinner = findViewById(R.id.spinner);
-        imageView = findViewById(R.id.imageView);
+        gridView = findViewById(R.id.gridView);
 
         // create ArrayList of names
         ArrayList cats = new ArrayList<String>();
@@ -45,37 +42,22 @@ public class SelectionActivity extends AppCompatActivity {
 
         catImages = new int[]{R.drawable.cat1, R.drawable.cat2, R.drawable.cat3, R.drawable.cat4};
 
-        // create the custom adapter and attach it to the spinner
+        // create the custom adapter and attach it to the gridView
         ImageAdapter adapter = new ImageAdapter(this, cats, catImages);
-        spinner.setAdapter(adapter);
+        gridView.setAdapter(adapter);
 
-        // create spinner listener
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        // create gridView listener
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (isFirst) {
-                    isFirst = false;
-                } else {
-                    //showPicture(position);
-                    Intent intent = new Intent(SelectionActivity.this, DisplayActivity.class);
-                    // pass in necessary information
-                    intent.putExtra("cats", cats);
-                    intent.putExtra("catImages", catImages);
-                    intent.putExtra("position", position);
-                    // start the intent
-                    startActivity(intent);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                //Toast.makeText(ImageActivity.this, "Item Unselected", Toast.LENGTH_SHORT).show();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(SelectionActivity.this, DisplayActivity.class);
+                // pass in necessary information
+                intent.putExtra("cats", cats);
+                intent.putExtra("catImages", catImages);
+                intent.putExtra("position", position);
+                // start the intent
+                startActivity(intent);
             }
         });
-
-    }
-
-    private void showPicture (int position) {
-        imageView.setImageResource(catImages[position]);
     }
 }
