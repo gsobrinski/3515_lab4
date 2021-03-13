@@ -3,6 +3,7 @@ package com.example.lab4;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.ImageView;
@@ -24,7 +25,12 @@ public class DisplayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
 
-        setTitle("Display");
+        // get resources from strings.xml
+        Resources res = getResources();
+
+        // set page title
+        String title = res.getString(R.string.display_title);
+        setTitle(title);
 
         // retrieve views from activity_display page
         image = findViewById(R.id.imageView);
