@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Affectation 4</string>
+    <string name="selection_title">Sélection</string>
+    <string name="display_title">Afficher</string>
+    <string name="app_instructions">Cliquez sur une image:</string>
+
+    <string-array name="cats_array">
+        <item>chat paisible</item>
+        <item>chat très mignon</item>
+        <item>chat relaxant</item>
+        <item>chat vigilant</item>
+    </string-array>
+</resources>
