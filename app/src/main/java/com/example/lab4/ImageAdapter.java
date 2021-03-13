@@ -55,7 +55,6 @@ public class ImageAdapter extends BaseAdapter {
             name.setText(names.get(position));
             name.setGravity(Gravity.CENTER);
             image.setImageResource(images[position]);
-            System.out.println("image: "+ position);
         }
 
         return convertView;

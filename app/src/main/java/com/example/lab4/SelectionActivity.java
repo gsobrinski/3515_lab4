@@ -18,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class SelectionActivity extends AppCompatActivity {
 
@@ -39,12 +40,8 @@ public class SelectionActivity extends AppCompatActivity {
         // retrieve views from the xml
         gridView = findViewById(R.id.gridView);
 
-        // create ArrayList of names
-        ArrayList cats = new ArrayList<String>();
-        cats.add("peaceful cat");
-        cats.add("very cute cat");
-        cats.add("relaxing cat");
-        cats.add("watchful cat");
+        // get String array as ArrayList
+        ArrayList<String> cats = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.cats_array)));
 
         catImages = new int[]{R.drawable.cat1, R.drawable.cat2, R.drawable.cat3, R.drawable.cat4};
 
