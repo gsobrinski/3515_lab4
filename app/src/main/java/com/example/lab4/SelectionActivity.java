@@ -15,6 +15,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class SelectionActivity extends AppCompatActivity {
 
     int[] catImages;
     GridView gridView;
+    TextView instructionText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,11 @@ public class SelectionActivity extends AppCompatActivity {
         // set page title
         String title = res.getString(R.string.selection_title);
         setTitle(title);
+
+        instructionText = findViewById(R.id.textView);
+        String instructions = res.getString(R.string.app_instructions);
+        instructionText.setText(instructions);
+
 
         // retrieve views from the xml
         gridView = findViewById(R.id.gridView);

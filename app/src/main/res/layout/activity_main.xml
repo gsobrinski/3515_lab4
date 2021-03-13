@@ -14,7 +14,6 @@
         android:layout_marginTop="49dp"
         android:layout_marginEnd="133dp"
         android:layout_marginBottom="100dp"
-        android:text="Click on an image:"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/gridView"
