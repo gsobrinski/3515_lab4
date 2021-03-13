@@ -3,6 +3,7 @@ package com.example.lab4;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +29,12 @@ public class SelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setTitle("Selection");
+        // get resources from strings.xml
+        Resources res = getResources();
+
+        // set page title
+        String title = res.getString(R.string.selection_title);
+        setTitle(title);
 
         // retrieve views from the xml
         gridView = findViewById(R.id.gridView);

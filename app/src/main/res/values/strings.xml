@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Lab4</string>
+    <string name="selection_title">Selection</string>
+    <string name="display_title">Display</string>
+    <string name="app_instructions">Click on an image:</string>
+
+    <string-array name="cats_array">
+        <item>peaceful cat</item>
+        <item>very cute cat</item>
+        <item>relaxing cat</item>
+        <item>watchful cat</item>
+    </string-array>
 </resources>
